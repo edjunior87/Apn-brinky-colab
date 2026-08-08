@@ -1,0 +1,11 @@
+document.documentElement.classList.add('js');
+const header=document.querySelector('[data-header]');
+const progress=document.querySelector('.scroll-progress span');
+const menuButton=document.querySelector('.menu-button');
+const nav=document.querySelector('.main-nav');
+const update=()=>{const y=window.scrollY;header.classList.toggle('scrolled',y>20);const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=`${max?Math.min(100,y/max*100):0}%`};
+addEventListener('scroll',update,{passive:true});update();
+menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open',!open)});
+nav.addEventListener('click',e=>{if(e.target.matches('a')){nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}});
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12,rootMargin:'0px 0px -6%'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
