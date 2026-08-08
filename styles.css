@@ -28,3 +28,12 @@
 @media (pointer:coarse){.main-nav a,.primary-action,.menu-button{min-height:48px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}}
 @media print{.site-header,.scroll-progress,.primary-action{display:none}.chapter,.attention,.future{padding:50px 0}.dark-surface{background:#fff!important;color:var(--ink)!important}.dark-surface p,.dark-surface li{color:var(--ink)!important}.hero{min-height:700px}.reveal{opacity:1!important;transform:none!important}.chapter{break-inside:avoid}}
+
+/* Mobile reading rhythm: turn loose pills into ordered, stable groups. */
+.coupon-stream{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:48px 0 64px}.coupon-stream span{min-height:52px;padding:12px 14px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:12px;line-height:1.25}
+.machine-functions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:50px 0 80px}.machine-functions span{min-height:62px;padding:14px 16px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:12px;line-height:1.2}
+.mission-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:20px 0}.mission-list span{min-height:64px;padding:16px 20px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:12px;line-height:1.2}.mission-list span:last-child{grid-column:1/-1}
+.buffet-price{align-self:start;display:flex;flex-direction:column;gap:14px;padding:clamp(30px,4vw,48px)}.buffet-price p{margin:0}.buffet-price strong{line-height:.9}.buffet-price span{line-height:1.35}.buffet-price i{margin-top:18px}
+
+@media (max-width:900px){.coupon-stream,.machine-functions{grid-template-columns:repeat(2,minmax(0,1fr))}.phone-orbit{display:none}}
+@media (max-width:620px){.chapter{padding:72px 0}.coupon-stream,.machine-functions{grid-template-columns:1fr;margin:34px 0 46px}.coupon-stream span,.machine-functions span{min-height:56px}.mission-list{grid-template-columns:1fr;padding:0}.mission-list span:last-child{grid-column:auto}.buffet-price{gap:12px;padding:30px}.buffet-price i{margin-top:14px}.phone-orbit{display:none}}
